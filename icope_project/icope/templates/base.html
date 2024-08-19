@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="{% static '/images/Icope1.png' %}" alt="Logo ICOPE Cameroun">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Publications</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="logo-right">
+            <a href="#">
+                <img src="{% static '/images/Flag.png' %}" alt="Logo Partenaire">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contenu de la page -->
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ICOPE Cameroun. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
