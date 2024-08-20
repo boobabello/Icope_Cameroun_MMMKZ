@@ -21,4 +21,6 @@ from icope import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('enregistrement/', views.enregistrer_questionnaire, name='enregistrer_questionnaire'),
+    path('detail/<int:questionnaire_id>', views.detail_questionnaire, name='detail_questionnaire'),
+    path('modifier/<int:questionnaire_id>', views.modifier_questionnaire, name='modifier_questionnaire'),
 ]
