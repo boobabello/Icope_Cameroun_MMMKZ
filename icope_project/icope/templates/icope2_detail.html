@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Succès !</h2>
+    <h1>Détails du questionnaire ICOPE2Form</h1>
+    <h1>Détails du Formulaire</h1>
+    
+    <ul>
+        <li>C récit event: {{ questionnaire.get_c_recit_event_display }}</li>
+        <li>C GPCOG score: {{ questionnaire.c_gpcog_score }}</li>
+        <li>N maladie aigue: {{ questionnaire.get_n_maladie_aigue_display }}</li>
+        <li>N score dépistage nutritionnel: {{ questionnaire.get_n_score_depistage_nutritionnel_display }}</li>
+        <li>N conditions nutrition: {{ questionnaire.get_n_conditions_nutrition_display }}</li>
+        <li>N MNA score: {{ questionnaire.n_mna_score }}</li>
+        <li>V Snellen score: {{ questionnaire.get_v_snellen_score_display }}</li>
+        <li>A Audiométrie score: {{ questionnaire.get_a_audiometrie_score_display }}</li>
+        <li>SP état sommeil: {{ questionnaire.get_sp_etat_sommeil_display }}</li>
+        <li>SP trouble sommeil: {{ questionnaire.get_sp_trouble_sommeil_display }}</li>
+        <li>SP pensée de mort: {{ questionnaire.get_sp_pense_mort_display }}</li>
+        <li>SP PHQ9 score: {{ questionnaire.get_sp_phq9_score_display }}</li>
+        <li>M lever chaise: {{ questionnaire.get_m_lever_chaise_display }}</li>
+        <li>M SPPB score: {{ questionnaire.get_m_sppb_score_display }}</li>
+    </ul>
+    <a href="{% url 'icope2-update' questionnaire.id %}">Modifier</a>
+    <a href="{% url 'icope2' %}">Passer au patient suivant</a>
+    
+{% endblock %}

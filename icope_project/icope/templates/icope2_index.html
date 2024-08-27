@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h3>le patient n: {{ questionnaire.id }} souffre de :</h3>
+    <ul>
+        {% if questionnaire.cognition == 1 %}
+        <li>Atteinte de la capacité <strong>cognitive</strong></li>
+        {% endif %}
+        {% if questionnaire.nutrition == 1 %}
+            <li>Atteinte de capacite <strong>nutritionnelle</strong> </li>
+        {% endif %}
+        {% if questionnaire.vision == 1 %}
+            <li>Atteinte de la capacité <strong>visuelle</strong></li>
+        {% endif %}
+        {% if questionnaire.audition == 1 %}
+            <li>Atteinte de la capacité <strong>auditive</strong></li>
+        {% endif %}
+        {% if questionnaire.santePsychique == 1 %}
+            <li>Atteinte de la capacité <strong>psychologique</strong></li>
+        {% endif %}
+        {% if questionnaire.mobilite == 1 %}
+            <li>Atteinte de la <strong>mobilite</strong></li>
+        {% endif %}
+    </ul>
+    
+  </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>Saisie du numéro de patient(ICOPE2)</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="numero_patient">Numéro de patient (ID) :</label>
+        <input type="text" name="numero_patient" id="numero_patient">
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  </div>
+{% endblock %}

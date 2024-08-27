@@ -20,7 +20,15 @@ from icope import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('enregistrement/', views.enregistrer_questionnaire, name='enregistrer_questionnaire'),
-    path('detail/<int:questionnaire_id>', views.detail_questionnaire, name='detail_questionnaire'),
-    path('modifier/<int:questionnaire_id>', views.modifier_questionnaire, name='modifier_questionnaire'),
+    path('enregistrement/add/', views.enregistrement_create, name='enregistrement-create'),
+    path('enregistrement/<int:questionnaire_id>', views.enregistrement_detail, name='enregistrement-detail'),
+    path('enregistrement/<int:questionnaire_id>/change', views.enregistrement_update, name='enregistrement-update'),
+    path('icope1/', views.icope1, name='icope1'),
+    path('icope1/<int:questionnaire_id>/add/', views.icope1_create, name='icope1-create'),
+    path('icope1/<int:questionnaire_id>', views.icope1_detail, name='icope1-detail'),
+    path('icope1/<int:questionnaire_id>/change', views.icope1_update, name='icope1-update'),
+    path('icope2/', views.icope2, name='icope2'),
+    path('icope2/<int:questionnaire_id>/add/', views.icope2_create, name='icope2-create'),
+    path('icope2/<int:questionnaire_id>', views.icope2_detail, name='icope2-detail'),
+    path('icope2/<int:questionnaire_id>/change', views.icope2_update, name='icope2-update'),
 ]

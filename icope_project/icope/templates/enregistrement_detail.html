@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Patient Succès !</h2>
+    <h1>Détails de l'enregistrement</h1>
+    <ul>
+        <li><strong>Numéro Patient:</strong> {{ questionnaire.id }}</li>
+        <li><strong>Date:</strong> {{ questionnaire.get_date_display }}</li>
+        <li><strong>Statut:</strong> {{ questionnaire.get_statut_display }}</li>
+        <li><strong>Sexe:</strong> {{ questionnaire.get_sexe_display }}</li>
+        <li><strong>Age:</strong> {{ questionnaire.age }}</li>
+        <li><strong>Age interval:</strong> {{ questionnaire.get_age_interval_display }}</li>
+        <li><strong>Statut matrimonial:</strong> {{ questionnaire.get_statut_matrimonial_display }}</li>
+        <li><strong>Niveau d'étude:</strong> {{ questionnaire.get_niveau_etude_display }}</li>
+        <li><strong>Activité parallèle:</strong> {{ questionnaire.get_activite_parallele_display }}</li>
+        <li><strong>Revenu mensuel:</strong> {{ questionnaire.get_revenu_mensuel_display }}</li>
+        <li><strong>Ethnie:</strong> {{ questionnaire.get_ethnie_display }}</li>
+        <li><strong>Religion:</strong> {{ questionnaire.get_religion_display }}</li>
+        <li><strong>Résidence:</strong> {{ questionnaire.get_residence_display }}</li>
+        <li><strong>Mise hors service:</strong> {{ questionnaire.get_mise_hors_service_display }}</li>
+        <li><strong>Grade actuel:</strong> {{ questionnaire.get_grade_actuel_display }}</li>
+        <li><strong>Années de service:</strong> {{ questionnaire.get_annees_service_display }}</li>
+        <li><strong>Corps d'armée:</strong> {{ questionnaire.get_corps_armee_display }}</li>
+        <li><strong>Poids:</strong> {{ questionnaire.poids }}</li>
+        <li><strong>Taille:</strong> {{ questionnaire.taille }}</li>
+        <li><strong>IMC:</strong> {{ questionnaire.get_imc_display }}</li>
+        <li><strong>Pression artérielle:</strong> {{ questionnaire.get_pression_arterielle_display }}</li>
+        <li><strong>Glycémie:</strong> {{ questionnaire.get_glycemie_display }}</li>
+        <li><strong>Test VIH:</strong> {{ questionnaire.get_test_vih_display }}</li>
+        <li><strong>Test hépatite:</strong> {{ questionnaire.get_test_hepatite_display }}</li>
+    </ul>
+
+    <a href="{% url 'enregistrement-update' questionnaire.id %}">Modifier</a>
+    <a href="{% url 'enregistrement-create' %}">Passer au patient suivant</a>
+{% endblock %}

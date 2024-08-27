@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="title">Icope2</h1>
+    <h3>le patient n: {{ instance.id }} souffre de :</h3>
+    <ul>
+        {% if instance.cognition == 1 %}
+        <li>Atteinte de la capacité <strong>cognitive</strong></li>
+        {% endif %}
+        {% if instance.nutrition == 1 %}
+            <li>Atteinte de capacite <strong>nutritionnelle</strong> </li>
+        {% endif %}
+        {% if instance.vision == 1 %}
+            <li>Atteinte de la capacité <strong>visuelle</strong></li>
+        {% endif %}
+        {% if instance.audition == 1 %}
+            <li>Atteinte de la capacité <strong>auditive</strong></li>
+        {% endif %}
+        {% if instance.santePsychique == 1 %}
+            <li>Atteinte de la capacité <strong>psychologique</strong></li>
+        {% endif %}
+        {% if instance.mobilite == 1 %}
+            <li>Atteinte de la <strong>mobilite</strong></li>
+        {% endif %}
+    </ul>
+    <form method="post" class="form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Suivant</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

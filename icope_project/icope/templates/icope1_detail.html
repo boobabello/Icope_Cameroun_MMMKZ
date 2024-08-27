@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Succès !</h2>
+    <h1>Informations du questionnaire</h1>
+    <ul>
+        <li>Avez-vous des problèmes de mémoire ou d’orientation ? : {{ questionnaire.get_cognition_1_display }}</li>
+        <li>Avez-vous constaté une aggravation de ces problèmes ? : {{ questionnaire.get_cognition_2_display }}</li>
+        <li>Quelle est la date complète d’aujourd’hui ? : {{ questionnaire.get_cognition_3_display }}</li>
+        <li>Perte de poids involontaire : {{ questionnaire.get_nutrition_1_display }}</li>
+        <li>Perte d'appétit : {{ questionnaire.get_nutrition_2_display }}</li>
+        <li>Problèmes de vue ou maladies de l'œil : {{ questionnaire.get_vision_1_display }}</li>
+        <li>Consultation ophtalmologue : {{ questionnaire.get_vision_2_display }}</li>
+        <li>Baisse de vue : {{ questionnaire.get_vision_3_display }}</li>
+        <li>Audition oreille droite : {{ questionnaire.get_audition_1_display }}</li>
+        <li>Audition oreille gauche : {{ questionnaire.get_audition_2_display }}</li>
+        <li>Baisse d'audition : {{ questionnaire.get_audition_3_display }}</li>
+        <li>Sentiment de déprime : {{ questionnaire.get_santePsychique_1_display }}</li>
+        <li>Manque d'intérêt : {{ questionnaire.get_santePsychique_2_display }}</li>
+        <li>Levers de chaise 14s : {{ questionnaire.get_mobilite_1_display }}</li>
+    </ul>
+
+    <div class="resultat_icope1">
+        <li><strong>Capacité cognitive atteinte:</strong> {{ questionnaire.get_cognition_display }}</li>
+    <li><strong>Capacité nutritionnelle atteinte:</strong> {{ questionnaire.get_nutrition_display }}</li>
+    <li><strong>Capacité visuelle atteinte:</strong> {{ questionnaire.get_vision_display }}</li>
+    <li><strong>Capacité auditive atteinte:</strong> {{ questionnaire.get_audition_display }}</li>
+    <li><strong>Capacité de santé psychique atteinte:</strong> {{ questionnaire.get_santePsychique_display }}</li>
+    <li><strong>Capacité de mobilité atteinte:</strong> {{ questionnaire.get_mobilite_display }}</li>
+    </div>
+    
+    <a href="{% url 'icope1-update' questionnaire.id %}">Modifier</a>
+    <a href="{% url 'icope1' %}">Passer au patient suivant</a>
+    
+{% endblock %}
